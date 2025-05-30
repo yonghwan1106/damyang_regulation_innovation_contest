@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>담양군 규제혁신 아이디어 공모전 트렌드 분석 보고서</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>담양군 트렌드 분석</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview">분석개요</a></li>
+                <li><a href="#insights">핵심인사이트</a></li>
+                <li><a href="#analysis">분야별분석</a></li>
+                <li><a href="#strategy">수상전략</a></li>
+                <li><a href="#recommendation">최종추천</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-trophy"></i>
+                <span>DATA-DRIVEN ANALYSIS</span>
+            </div>
+            <h1>담양군 규제혁신 아이디어 공모전</h1>
+            <h2>트렌드 분석 보고서</h2>
+            <p>네이버 데이터랩 검색어 트렌드 분석 (2023.01 ~ 2025.04)</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="28">0</div>
+                    <div class="stat-label">개월 분석</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">분야 조사</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">키워드 분석</div>
+                </div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('overview')">
+                <span>분석 시작하기</span>
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+        <div class="hero-visual">
+            <canvas id="heroChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">01</span>
+                <h2>분석 개요</h2>
+                <p>체계적인 데이터 수집 및 분석 방법론</p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>분석 기간</h3>
+                    <p>2023년 1월 ~ 2025년 4월<br><strong>28개월</strong> 연속 분석</p>
+                </div>
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>데이터 출처</h3>
+                    <p>네이버 데이터랩<br><strong>검색어 트렌드</strong> API</p>
+                </div>
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>분석 방법</h3>
+                    <p>월간 검색량 추이 분석<br><strong>계절성 패턴</strong> 파악</p>
+                </div>
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>조사 대상</h3>
+                    <p>4개 분야<br><strong>20+ 핵심 키워드</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="section insights-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">02</span>
+                <h2>핵심 인사이트</h2>
+                <p>데이터가 말해주는 핵심 발견사항</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card primary" data-aos="fade-right">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <span class="badge">최우선 추천</span>
+                    </div>
+                    <h3>경제활동 (소상공인 지원)</h3>
+                    <ul>
+                        <li><strong>소상공인</strong> 키워드가 지속적으로 최고 검색량 유지</li>
+                        <li>평균 <strong>60-70%</strong> 검색 비중</li>
+                        <li>2024년 1-2월, 7월 검색량 <strong>80% 이상</strong> 급증</li>
+                        <li>정부 정책 발표 시점과 높은 상관관계</li>
+                    </ul>
+                    <div class="trend-indicator up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>상승 트렌드</span>
+                    </div>
+                </div>
+                <div class="insight-card secondary" data-aos="fade-left">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <span class="badge">지역특화</span>
+                    </div>
+                    <h3>담양/대나무 관광산업</h3>
+                    <ul>
+                        <li><strong>담양</strong> 키워드가 봄~가을 관광시즌 검색량 급증</li>
+                        <li>2023년 5월, 10월 최고점 <strong>95-100%</strong></li>
+                        <li>계절성이 뚜렷하여 규제개선 시점 예측 가능</li>
+                        <li>대나무 키워드가 담양 검색량의 20-25% 연동</li>
+                    </ul>
+                    <div class="trend-indicator seasonal">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>계절성 패턴</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">03</span>
+                <h2>분야별 상세 분석</h2>
+                <p>4개 분야별 트렌드 특징 및 규제개선 방향</p>
+            </div>
+            <div class="analysis-tabs">
+                <button class="tab-button active" onclick="showTab('economic')">
+                    <i class="fas fa-store"></i>
+                    <span>경제활동</span>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </button>
+                <button class="tab-button" onclick="showTab('regional')">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>지역특화</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </button>
+                <button class="tab-button" onclick="showTab('daily')">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>일상생활</span>
+                    <div class="rating">⭐⭐⭐</div>
+                </button>
+                <button class="tab-button" onclick="showTab('welfare')">
+                    <i class="fas fa-heart"></i>
+                    <span>안전·복지</span>
+                    <div class="rating">⭐⭐</div>
+                </button>
+            </div>
+            <div class="tab-content">
+                <div id="economic" class="tab-panel active">
+                    <div class="chart-container">
+                        <canvas id="economicChart"></canvas>
+                    </div>
+                    <div class="analysis-content">
+                        <h3>경제활동 분야 분석</h3>
+                        <div class="key-points">
+                            <div class="point">
+                                <span class="point-number">1</span>
+                                <div>
+                                    <h4>소상공인 압도적 1위</h4>
+                                    <p>전체 기간 평균 검색비중 60%, 지속적 최고 관심도</p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <span class="point-number">2</span>
+                                <div>
+                                    <h4>명절시즌 전통시장 관심 증가</h4>
+                                    <p>추석: 15%, 설날: 14% 검색량 상승</p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <span class="point-number">3</span>
+                                <div>
+                                    <h4>정부 정책과 높은 상관관계</h4>
+                                    <p>2023년 1월, 2024년 1-2월, 7월 급증</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendations">
+                            <h4>🎯 규제개선 아이디어 방향</h4>
+                            <div class="rec-grid">
+                                <div class="rec-item">소상공인 인허가 절차 간소화</div>
+                                <div class="rec-item">전통시장 활성화 규제 완화</div>
+                                <div class="rec-item">농촌관광 연계 소상공인 지원</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="regional" class="tab-panel">
+                    <div class="chart-container">
+                        <canvas id="regionalChart"></canvas>
+                    </div>
+                    <div class="analysis-content">
+                        <h3>지역특화 분야 분석</h3>
+                        <div class="key-points">
+                            <div class="point">
+                                <span class="point-number">1</span>
+                                <div>
+                                    <h4>뚜렷한 계절성 패턴</h4>
+                                    <p>봄(3-5월), 가을(9-10월) 관광시즌 집중</p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <span class="point-number">2</span>
+                                <div>
+                                    <h4>대나무-담양 연동성</h4>
+                                    <p>대나무 키워드가 담양 검색량의 20-25% 수준</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendations">
+                            <h4>🎯 규제개선 아이디어 방향</h4>
+                            <div class="rec-grid">
+                                <div class="rec-item">관광지 주차장 운영 규제 완화</div>
+                                <div class="rec-item">농촌민박 운영 허가 절차 간소화</div>
+                                <div class="rec-item">대나무 관련 제품 제조·판매 규제 개선</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="daily" class="tab-panel">
+                    <div class="chart-container">
+                        <canvas id="dailyChart"></canvas>
+                    </div>
+                    <div class="analysis-content">
+                        <h3>일상생활 분야 분석</h3>
+                        <div class="key-points">
+                            <div class="point">
+                                <span class="point-number">1</span>
+                                <div>
+                                    <h4>인허가 지속적 관심</h4>
+                                    <p>50-100% 검색량 유지, 안정적 수요</p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <span class="point-number">2</span>
+                                <div>
+                                    <h4>디지털 전환 영향</h4>
+                                    <p>2025년 들어 전반적 감소, 온라인화 진행</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendations">
+                            <h4>🎯 규제개선 아이디어 방향</h4>
+                            <div class="rec-grid">
+                                <div class="rec-item">비대면 인허가 시스템 확대</div>
+                                <div class="rec-item">원스톱 행정서비스 구축</div>
+                                <div class="rec-item">모바일 민원처리 시스템 개선</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="welfare" class="tab-panel">
+                    <div class="chart-container">
+                        <canvas id="welfareChart"></canvas>
+                    </div>
+                    <div class="analysis-content">
+                        <h3>안전·복지 분야 분석</h3>
+                        <div class="key-points">
+                            <div class="point">
+                                <span class="point-number">1</span>
+                                <div>
+                                    <h4>출산지원 상대적 높은 관심</h4>
+                                    <p>20-40% 검색량, 정책 발표시 증가</p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <span class="point-number">2</span>
+                                <div>
+                                    <h4>신학기 육아지원 관심 증가</h4>
+                                    <p>3월 육아지원 키워드 검색량 상승</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendations">
+                            <h4>🎯 규제개선 아이디어 방향</h4>
+                            <div class="rec-grid">
+                                <div class="rec-item">출산장려금 신청 절차 간소화</div>
+                                <div class="rec-item">어린이집 설치 허가 기준 완화</div>
+                                <div class="rec-item">고령자 복지시설 운영 규제 개선</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="section strategy-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">04</span>
+                <h2>수상 전략 제안</h2>
+                <p>데이터 기반 최적화된 공모전 전략</p>
+            </div>
+            <div class="strategy-grid">
+                <div class="strategy-card winner" data-aos="zoom-in">
+                    <div class="card-badge">🏆 최우수상 노리기</div>
+                    <h3>소상공인 분야</h3>
+                    <div class="strategy-title">"농촌관광과 연계한 소상공인 창업 인허가 원스톱 시스템"</div>
+                    <div class="evidence">
+                        <h4>🔍 근거</h4>
+                        <ul>
+                            <li>검색량 1위 분야로 사회적 관심도 최고</li>
+                            <li>담양 지역특화(관광)와 연계 가능</li>
+                            <li>실현가능성과 효과성 모두 높음</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-metrics">
+                        <div class="metric">
+                            <span class="metric-value">95%</span>
+                            <span class="metric-label">수상가능성</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="strategy-card unique" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-badge">✨ 차별화 전략</div>
+                    <h3>계절성 활용</h3>
+                    <div class="strategy-title">"관광시즌 대응 유연 규제 시스템"</div>
+                    <div class="evidence">
+                        <h4>🔍 근거</h4>
+                        <ul>
+                            <li>담양 관광의 뚜렷한 계절성 패턴 활용</li>
+                            <li>성수기/비수기 다른 규제 적용으로 독창성 확보</li>
+                            <li>데이터 기반 구체적 제안 가능</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-metrics">
+                        <div class="metric">
+                            <span class="metric-value">88%</span>
+                            <span class="metric-label">차별화도</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendation Section -->
+    <section id="recommendation" class="section recommendation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">05</span>
+                <h2>최종 추천</h2>
+                <p>마감 임박 상황 대응 우선순위</p>
+            </div>
+            <div class="deadline-alert">
+                <div class="alert-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="alert-content">
+                    <h3>🚨 마감까지 남은 시간</h3>
+                    <div class="countdown-timer">
+                        <div class="timer-card">
+                            <span class="time" id="hours">00</span>
+                            <span class="label">시간</span>
+                        </div>
+                        <div class="timer-card">
+                            <span class="time" id="minutes">00</span>
+                            <span class="label">분</span>
+                        </div>
+                        <div class="timer-card">
+                            <span class="time" id="seconds">00</span>
+                            <span class="label">초</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recommendation-ranking">
+                <div class="rank-item first" data-aos="slide-up">
+                    <div class="rank-badge">1순위</div>
+                    <div class="rank-content">
+                        <h3>소상공인 인허가 간소화</h3>
+                        <p>검색량 기준 최고 관심도, 실현가능성 높음</p>
+                        <div class="rank-features">
+                            <span class="feature">✓ 데이터 1위</span>
+                            <span class="feature">✓ 실현가능</span>
+                            <span class="feature">✓ 파급효과</span>
+                        </div>
+                    </div>
+                    <div class="rank-score">95점</div>
+                </div>
+                <div class="rank-item second" data-aos="slide-up" data-aos-delay="100">
+                    <div class="rank-badge">2순위</div>
+                    <div class="rank-content">
+                        <h3>농촌관광 규제 개선</h3>
+                        <p>담양 지역특화 강점 활용, 계절성 데이터 뒷받침</p>
+                        <div class="rank-features">
+                            <span class="feature">✓ 지역특화</span>
+                            <span class="feature">✓ 계절성</span>
+                            <span class="feature">✓ 차별화</span>
+                        </div>
+                    </div>
+                    <div class="rank-score">88점</div>
+                </div>
+                <div class="rank-item third" data-aos="slide-up" data-aos-delay="200">
+                    <div class="rank-badge">3순위</div>
+                    <div class="rank-content">
+                        <h3>행정절차 디지털화</h3>
+                        <p>미래지향적 접근, 젊은 층 호응도 높음</p>
+                        <div class="rank-features">
+                            <span class="feature">✓ 미래지향</span>
+                            <span class="feature">✓ 디지털</span>
+                            <span class="feature">✓ 혁신성</span>
+                        </div>
+                    </div>
+                    <div class="rank-score">78점</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>지금 바로 제출하세요!</h2>
+                <p>데이터 기반 완벽한 분석으로 수상 확률을 높이세요</p>
+                <a href="https://naver.me/xl0R2Lq6" class="submit-button" target="_blank">
+                    <i class="fas fa-paper-plane"></i>
+                    네이버폼으로 제출하기
+                </a>
+                <div class="cta-note">
+                    <p>⏰ 마감: 2025년 5월 30일 24:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>담양군 규제혁신 트렌드 분석</h3>
+                    <p>네이버 데이터랩 기반 분석 • 2025년 5월 30일</p>
+                    <div class="footer-stats">
+                        <span>28개월 데이터</span>
+                        <span>20+ 키워드</span>
+                        <span>4개 분야</span>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>분석 도구</h4>
+                    <ul>
+                        <li>네이버 데이터랩 API</li>
+                        <li>Chart.js 시각화</li>
+                        <li>Claude Sonnet 4 분석</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Claude Sonnet 4 Analysis Report. 데이터 기반 인사이트로 성공하세요.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

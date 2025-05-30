@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제안서 상세 - 담양 DNA 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'damyang-green': '#10B981',
+                        'rural-gold': '#F59E0B',
+                        'digital-blue': '#3B82F6',
+                        'bamboo': '#22C55E'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-noto { font-family: 'Noto Sans KR', sans-serif; }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-noto text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">담</span>
+                    </div>
+                    <a href="index.html" class="font-bold text-xl text-gray-900">담양 DNA 시스템</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-damyang-green transition-colors">홈</a>
+                    <a href="proposal.html" class="text-damyang-green font-semibold">제안서</a>
+                    <a href="system-demo.html" class="text-gray-700 hover:text-damyang-green transition-colors">시스템 데모</a>
+                    <a href="trend-analysis.html" class="text-gray-700 hover:text-damyang-green transition-colors">트렌드 분석</a>
+                    <a href="benchmarking.html" class="text-gray-700 hover:text-damyang-green transition-colors">벤치마킹</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-damyang-green to-bamboo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">제안서 상세</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                담양 특화관광 소상공인 창업 '원클릭 허가' 시스템 구축 제안서
+            </p>
+        </div>
+    </section>
+
+    <!-- Proposal Info -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-2xl p-8 mb-12 scroll-reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">📋 제안서 정보</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">제안자</h3>
+                        <p class="text-gray-600">박용환</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">소속</h3>
+                        <p class="text-gray-600">크리에이티브 넥서스</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">연락처</h3>
+                        <p class="text-gray-600">010-7939-3123</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-700 mb-2">이메일</h3>
+                        <p class="text-gray-600">sanoramyun8@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    담양 특화관광 소상공인 창업<br>
+                    <span class="text-damyang-green">'원클릭 허가' 시스템 구축</span>
+                </h2>
+                <div class="inline-flex items-center px-4 py-2 bg-damyang-green text-white rounded-full text-sm font-medium">
+                    ☑ ③ 경제활동 분야
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Issues -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🔍 현황 및 문제점</h2>
+                <p class="text-xl text-gray-600">네이버 데이터랩 28개월 분석을 통한 실증 데이터 기반 분석</p>
+            </div>
+
+            <!-- Data Evidence -->
+            <div class="bg-white rounded-2xl p-8 mb-8 scroll-reveal">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">📊 실증 데이터 근거</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-damyang-green to-bamboo rounded-xl p-6 text-white">
+                        <h4 class="text-lg font-semibold mb-3">소상공인 키워드 분석</h4>
+                        <div class="text-3xl font-bold mb-2">67.3%</div>
+                        <p class="text-white/90">전체 기간 압도적 1위 검색량 (28개월 평균)</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-digital-blue to-cyan-500 rounded-xl p-6 text-white">
+                        <h4 class="text-lg font-semibold mb-3">담양 관광 계절성</h4>
+                        <div class="text-3xl font-bold mb-2">100%</div>
+                        <p class="text-white/90">성수기(5월, 10월) 검색량 최고점 달성</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Status -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">📈 현황 분석</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                            <span class="font-medium text-gray-700">담양군 연간 관광객</span>
+                            <span class="font-bold text-blue-600">527만명</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                            <span class="font-medium text-gray-700">지역특화 창업 수요</span>
+                            <span class="font-bold text-green-600">급증</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                            <span class="font-medium text-gray-700">현행 인허가 처리</span>
+                            <span class="font-bold text-yellow-600">22일</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                            <span class="font-medium text-gray-700">관련 부서 방문</span>
+                            <span class="font-bold text-purple-600">평균 6개</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">⚠️ 핵심 문제점</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 pl-4 py-2">
+                            <h4 class="font-semibold text-red-800">시기적 미스매치</h4>
+                            <p class="text-red-600 text-sm">관광성수기 창업 수요 급증 시 행정처리 지연</p>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4 py-2">
+                            <h4 class="font-semibold text-orange-800">지역특화 부재</h4>
+                            <p class="text-orange-600 text-sm">담양 특산품 관련 특별 가이드라인 없음</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                            <h4 class="font-semibold text-yellow-800">부서간 칸막이</h4>
+                            <p class="text-yellow-600 text-sm">분산 처리로 중복 서류 및 대기시간 발생</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4 py-2">
+                            <h4 class="font-semibold text-purple-800">디지털 격차</h4>
+                            <p class="text-purple-600 text-sm">농촌 고령층의 비대면 서비스 접근성 부족</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Solution Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🚀 혁신적 개선방안</h2>
+                <p class="text-xl text-gray-600">담양 DNA 소상공인 원클릭 허가 시스템</p>
+                <div class="mt-4 text-lg text-gray-500">
+                    <span class="font-bold text-digital-blue">D</span>igital · 
+                    <span class="font-bold text-bamboo">N</span>ature-tourism · 
+                    <span class="font-bold text-rural-gold">A</span>griculture
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Digital -->
+                <div class="bg-gradient-to-r from-digital-blue/10 to-cyan-50 rounded-2xl p-8 scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-digital-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-xl">💻</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-digital-blue">1️⃣ 스마트 통합 플랫폼 구축</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">AI 맞춤 가이드</h4>
+                            <p class="text-gray-600 text-sm">업종별 맞춤 인허가 절차 자동 안내 시스템</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">원클릭 신청</h4>
+                            <p class="text-gray-600 text-sm">하나의 양식으로 모든 관련 부서 동시 신청</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">실시간 알림</h4>
+                            <p class="text-gray-600 text-sm">카카오톡 연동으로 처리 현황 실시간 전송</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nature-tourism -->
+                <div class="bg-gradient-to-r from-bamboo/10 to-green-50 rounded-2xl p-8 scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-bamboo rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-xl">🌿</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-bamboo">2️⃣ 담양 특화 패스트트랙 운영</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">관광연계 우선처리</h4>
+                            <p class="text-gray-600 text-sm">죽제품, 대나무 공예, 농촌체험 등 7일 내 처리</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">계절대응 탄력운영</h4>
+                            <p class="text-gray-600 text-sm">성수기(3-5월, 9-10월) 24시간 승인 시스템</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">지역멘토 연계</h4>
+                            <p class="text-gray-600 text-sm">선배 소상공인 1:1 멘토링 자동 매칭</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agriculture -->
+                <div class="bg-gradient-to-r from-rural-gold/10 to-yellow-50 rounded-2xl p-8 scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-rural-gold rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-xl">🌾</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-rural-gold">3️⃣ 모바일 퍼스트 행정서비스</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">담양 창업앱</h4>
+                            <p class="text-gray-600 text-sm">QR코드 스캔으로 현장 즉시 신청 가능</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">영상 상담</h4>
+                            <p class="text-gray-600 text-sm">고령 창업자 대상 화상 도우미 서비스</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">다국어 지원</h4>
+                            <p class="text-gray-600 text-sm">외국인 관광객 대상 영어/중국어 서비스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Results -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">📈 기대효과</h2>
+                <p class="text-xl text-gray-600">정량적 · 정성적 효과 분석</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Quantitative Effects -->
+                <div class="bg-white rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📊 정량적 효과</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-green-800">처리기간 혁신</h4>
+                                <p class="text-green-600 text-sm">22일 → 7일</p>
+                            </div>
+                            <div class="text-2xl font-bold text-green-600">68%↓</div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">창업 활성화</h4>
+                                <p class="text-blue-600 text-sm">연간 신규 소상공인</p>
+                            </div>
+                            <div class="text-2xl font-bold text-blue-600">45%↑</div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-purple-800">관광 체험 다양화</h4>
+                                <p class="text-purple-600 text-sm">소상공인 연계 체험상품</p>
+                            </div>
+                            <div class="text-2xl font-bold text-purple-600">300%↑</div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-yellow-800">행정비용 절감</h4>
+                                <p class="text-yellow-600 text-sm">공무원 업무시간 단축</p>
+                            </div>
+                            <div class="text-2xl font-bold text-yellow-600">8,200만원</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Qualitative Effects -->
+                <div class="bg-white rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">✨ 정성적 효과</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-damyang-green pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">전국 모범사례</h4>
+                            <p class="text-gray-600 text-sm">농촌관광 특화 규제혁신 모델로 타 지자체 확산</p>
+                        </div>
+                        <div class="border-l-4 border-digital-blue pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">젊은 층 농촌 유입</h4>
+                            <p class="text-gray-600 text-sm">MZ세대 농촌 창업 진입장벽 완화로 인구 유입</p>
+                        </div>
+                        <div class="border-l-4 border-bamboo pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">담양 브랜드 강화</h4>
+                            <p class="text-gray-600 text-sm">'창업하기 좋은 농촌도시' 이미지 구축</p>
+                        </div>
+                        <div class="border-l-4 border-rural-gold pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">지속가능 관광</h4>
+                            <p class="text-gray-600 text-sm">지역주민 참여형 관광생태계 조성으로 상생 발전</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Plan -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🏗️ 실현가능성</h2>
+                <p class="text-xl text-gray-600">단계별 실행계획 및 예산 방안</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Timeline -->
+                <div class="bg-gray-50 rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📅 단계별 실행계획</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-damyang-green rounded-full flex items-center justify-center text-white font-bold mr-4 mt-1">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">1단계 (3개월)</h4>
+                                <p class="text-gray-600 text-sm">통합 플랫폼 개발 및 파일럿 테스트 운영</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-digital-blue rounded-full flex items-center justify-center text-white font-bold mr-4 mt-1">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">2단계 (6개월)</h4>
+                                <p class="text-gray-600 text-sm">담양 창업앱 정식 출시 및 멘토링 체계 구축</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-bamboo rounded-full flex items-center justify-center text-white font-bold mr-4 mt-1">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">3단계 (12개월)</h4>
+                                <p class="text-gray-600 text-sm">성과 분석 및 타 지자체 확산 모델 완성</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget -->
+                <div class="bg-gray-50 rounded-2xl p-8 scroll-reveal">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">💰 예산 및 재원조달</h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-4">총 사업비: 4억 2천만원</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-green-100 rounded-lg">
+                                <span class="text-green-800">정부지원 (농림부)</span>
+                                <span class="font-bold text-green-800">50%</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-blue-100 rounded-lg">
+                                <span class="text-blue-800">도비</span>
+                                <span class="font-bold text-blue-800">30%</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-yellow-100 rounded-lg">
+                                <span class="text-yellow-800">군비</span>
+                                <span class="font-bold text-yellow-800">20%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">투자 회수</h4>
+                        <p class="text-gray-600 text-sm">1년 내 투자비 100% 회수<br>(세수 증가 및 관광수입 효과)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Strategy -->
+    <section class="py-16 bg-damyang-green">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-reveal">
+                <h2 class="text-3xl font-bold text-white mb-6">🏆 성공 전략</h2>
+                <p class="text-xl text-white/90 mb-12">심사 기준별 차별화 요소</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                        <div class="text-4xl font-bold text-white mb-4">30%</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">창의성</h3>
+                        <p class="text-white/90 text-sm">전국 최초 농촌관광 특화 원스톱 시스템</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                        <div class="text-4xl font-bold text-white mb-4">30%</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">실현가능성</h3>
+                        <p class="text-white/90 text-sm">기존 기술 활용 + 법적근거 확보</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                        <div class="text-4xl font-bold text-white mb-4">40%</div>
+                        <h3 class="text-lg font-semibold text-white mb-3">효과성</h3>
+                        <p class="text-white/90 text-sm">68% 처리시간 단축 + 전국 확산</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-2xl font-bold text-white">
+                    <span class="bg-white/20 px-6 py-3 rounded-full">예상 수상 확률: 85%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">더 자세한 정보가 필요하신가요?</h2>
+                <p class="text-xl text-gray-600 mb-8">시스템 데모와 트렌드 분석을 확인해보세요</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="system-demo.html" class="px-8 py-4 bg-damyang-green text-white font-bold rounded-xl hover:bg-bamboo transition-colors">
+                        🚀 시스템 데모 체험
+                    </a>
+                    <a href="trend-analysis.html" class="px-8 py-4 bg-digital-blue text-white font-bold rounded-xl hover:bg-blue-600 transition-colors">
+                        📊 트렌드 분석 보기
+                    </a>
+                    <a href="benchmarking.html" class="px-8 py-4 bg-rural-gold text-white font-bold rounded-xl hover:bg-yellow-500 transition-colors">
+                        🌍 벤치마킹 사례
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">담</span>
+                    </div>
+                    <span class="text-white font-bold text-xl">담양 DNA 소상공인 원클릭 허가 시스템</span>
+                </div>
+                <p class="text-gray-400 mb-4">2025 담양군 규제혁신 아이디어 공모전 출품작</p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <span>제안자: 박용환</span>
+                    <span>소속: 크리에이티브 넥서스</span>
+                    <span>연락처: 010-7939-3123</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

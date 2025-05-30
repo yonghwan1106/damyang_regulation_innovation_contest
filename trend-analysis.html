@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>담양군 규제혁신 아이디어 발굴을 위한 트렌드 분석 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'damyang-green': '#10B981',
+                        'rural-gold': '#F59E0B',
+                        'digital-blue': '#3B82F6',
+                        'bamboo': '#22C55E'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-noto { font-family: 'Noto Sans KR', sans-serif; }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 350px;
+            width: 100%;
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body class="font-noto text-gray-800 bg-gray-50">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">담</span>
+                    </div>
+                    <a href="index.html" class="font-bold text-xl text-gray-900">담양 DNA 시스템</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-damyang-green transition-colors">홈</a>
+                    <a href="proposal.html" class="text-gray-700 hover:text-damyang-green transition-colors">제안서</a>
+                    <a href="system-demo.html" class="text-gray-700 hover:text-damyang-green transition-colors">시스템 데모</a>
+                    <a href="trend-analysis.html" class="text-damyang-green font-semibold">트렌드 분석</a>
+                    <a href="benchmarking.html" class="text-gray-700 hover:text-damyang-green transition-colors">벤치마킹</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold text-damyang-green sm:text-5xl scroll-reveal">규제혁신 아이디어 발굴을 위한 트렌드 분석</h1>
+            <p class="mt-4 text-xl text-gray-600 scroll-reveal">네이버 데이터랩 검색량(2023.1~2025.4) 기반 객관적 데이터 제시</p>
+        </div>
+    </header>
+
+    <main class="py-10">
+        <section id="overview" class="py-12 bg-white scroll-reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block bg-digital-blue text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">분석 개요</span>
+                    <h2 class="mt-2 text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl">
+                        담양군 규제혁신 방향성 탐색
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        네이버 데이터랩의 28개월간 검색어 트렌드 데이터를 객관적으로 분석하여, 담양군민과 소상공인의 실제 관심사와 불편 사항을 파악하고, 이를 바탕으로 효과적인 규제혁신 분야를 도출하고자 합니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                        <div class="text-3xl mb-3">🗓️</div>
+                        <h3 class="text-lg font-medium text-gray-900">분석 기간</h3>
+                        <p class="mt-1 text-gray-600">28개월 (23.1 ~ 25.4)</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                         <div class="text-3xl mb-3">📊</div>
+                        <h3 class="text-lg font-medium text-gray-900">데이터 소스</h3>
+                        <p class="mt-1 text-gray-600">네이버 데이터랩</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                         <div class="text-3xl mb-3">🎯</div>
+                        <h3 class="text-lg font-medium text-gray-900">분석 목적</h3>
+                        <p class="mt-1 text-gray-600">핵심 규제 분야 발굴</p>
+                    </div>
+                     <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                         <div class="text-3xl mb-3">💡</div>
+                        <h3 class="text-lg font-medium text-gray-900">활용 방안</h3>
+                        <p class="mt-1 text-gray-600">아이디어 기반 마련</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="findings" class="py-12 bg-gray-100 scroll-reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block bg-rural-gold text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">핵심 발견 사항</span>
+                    <h2 class="mt-2 text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl">
+                        데이터로 확인된 주요 관심 분야
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-damyang-green">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">📈 가장 높은 관심도: '소상공인' 관련 키워드</h3>
+                        <p class="text-gray-600 mb-4">분석 기간 동안 '소상공인' 키워드는 평균 60-70%의 압도적인 검색 비중을 차지했으며, 특히 정부 지원 정책 발표 시기에는 80% 이상 급증하는 패턴을 보였습니다. 이는 소상공인 분야가 규제 개선 요구가 가장 높은 영역임을 시사합니다.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="smeTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-bamboo">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">🌿 뚜렷한 계절성: '담양 관광' 관련 키워드</h3>
+                        <p class="text-gray-600 mb-4">'담양' 키워드는 봄(3-5월)과 가을(9-10월) 관광 시즌에 검색량이 최고 100%까지 급증하는 명확한 계절성을 나타냈습니다. 이는 관광 시즌에 맞춘 규제 개선이 큰 효과를 볼 수 있음을 의미합니다.</p>
+                         <div class="chart-container h-64">
+                            <canvas id="tourismTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="py-12 bg-white scroll-reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                     <span class="inline-block bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">분야별 상세 분석</span>
+                    <h2 class="mt-2 text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl">
+                        4개 분야별 검색 트렌드 특징
+                    </h2>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="p-6 border rounded-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">경제활동 분야 <span class="text-yellow-400">⭐⭐⭐⭐⭐</span></h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            <div class="chart-container">
+                                <canvas id="economicChart"></canvas>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">데이터 특징:</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                                    <li>'소상공인' 키워드: 평균 60% 비중, 정책 발표 시 급증 (최대 100%)</li>
+                                    <li>'전통시장' 키워드: 명절 시즌 14-15%까지 상승</li>
+                                </ul>
+                                <h4 class="font-bold mb-2">시사점:</h4>
+                                <p class="text-gray-700">소상공인 관련 행정 절차 및 지원 정책에 대한 관심도가 매우 높으며, 시의성 있는 대응이 중요합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border rounded-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">지역특화 분야 <span class="text-yellow-400">⭐⭐⭐⭐</span></h3>
+                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            <div class="chart-container">
+                                <canvas id="regionalChart"></canvas>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">데이터 특징:</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                                    <li>'담양' 키워드: 봄/가을 피크, 겨울 최저 (50% 수준)</li>
+                                    <li>'대나무' 키워드: 담양 검색량의 20-25% 차지</li>
+                                </ul>
+                                 <h4 class="font-bold mb-2">시사점:</h4>
+                                <p class="text-gray-700">관광 성수기와 비수기의 뚜렷한 구분을 통해, 관광 관련 규제의 유연한 적용 필요성이 대두됩니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border rounded-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">일상생활 분야 <span class="text-yellow-400">⭐⭐⭐</span></h3>
+                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            <div class="chart-container">
+                                <canvas id="dailyChart"></canvas>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">데이터 특징:</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                                    <li>'인허가' 키워드: 50-100%로 꾸준하나, 전반적 하락 추세 (20% 감소)</li>
+                                </ul>
+                                 <h4 class="font-bold mb-2">시사점:</h4>
+                                <p class="text-gray-700">행정 절차에 대한 관심은 여전하나, 디지털화로 인해 관심도가 점차 하락하는 추세는 비대면/온라인 서비스 강화의 필요성을 보여줍니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border rounded-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">안전·복지 분야 <span class="text-yellow-400">⭐⭐</span></h3>
+                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            <div class="chart-container">
+                                <canvas id="welfareChart"></canvas>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">데이터 특징:</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                                    <li>'출산지원': 20-40%로 상대적 높음, 연초 증가</li>
+                                     <li>'육아지원': 10-15% 꾸준, 3월(신학기) 증가</li>
+                                     <li>'어르신복지': 1% 미만으로 매우 낮음</li>
+                                </ul>
+                                 <h4 class="font-bold mb-2">시사점:</h4>
+                                <p class="text-gray-700">출산/육아 지원에 대한 관심은 높으나, 어르신 복지 관련 검색량은 낮아 정보 접근성 개선이나 다른 방식의 요구 파악이 필요할 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunity" class="py-12 bg-gray-100 scroll-reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">규제혁신 기회 영역</span>
+                    <h2 class="mt-2 text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl">
+                        데이터가 가리키는 규제혁신 잠재 분야
+                    </h2>
+                     <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        검색 트렌드 분석 결과, 다음과 같은 분야에서 규제혁신 아이디어를 발굴할 경우, 군민 및 소상공인의 높은 호응과 실질적인 효과를 기대할 수 있습니다.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                         <div class="text-3xl mb-3">💡</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">소상공인 지원 절차 간소화 및 디지털화</h3>
+                        <p class="text-gray-600">가장 높은 검색량을 보이는 '소상공인' 분야, 특히 창업 및 운영과 관련된 복잡한 인허가 절차를 간소화하고 온라인으로 처리할 수 있는 시스템은 파급 효과가 클 것으로 예상됩니다.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                         <div class="text-3xl mb-3">💡</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">관광 시즌 연동형 유연 규제 도입</h3>
+                        <p class="text-gray-600">담양 관광의 뚜렷한 계절성을 고려하여, 성수기에는 주차, 숙박, 임시 판매시설 등에 대한 규제를 한시적으로 완화하고 비수기에는 다른 기준을 적용하는 유연한 접근이 필요합니다.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                         <div class="text-3xl mb-3">💡</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">지역 특화(대나무 등) 산업 육성을 위한 규제 개선</h3>
+                        <p class="text-gray-600">'대나무' 키워드의 꾸준한 검색량은 관련 산업에 대한 잠재 수요를 보여줍니다. 대나무 제품의 제조, 판매, 체험 시설 운영 등에 대한 규제를 현실에 맞게 개선할 필요가 있습니다.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                         <div class="text-3xl mb-3">💡</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">비대면/모바일 행정 서비스 강화</h3>
+                        <p class="text-gray-600">'인허가' 검색량 감소 추세는 디지털 전환의 영향으로, 모든 행정 절차를 온라인과 모바일에서 쉽고 편리하게 처리할 수 있도록 시스템을 고도화하는 것이 중요합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="py-16 bg-white scroll-reveal">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">종합 결론</h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    네이버 검색 트렌드 분석 결과, 담양군의 규제혁신은 **'소상공인 지원'**과 **'관광산업 활성화'**라는 두 가지 큰 축을 중심으로 추진될 때 가장 큰 효과를 기대할 수 있습니다. 특히 이 두 분야를 **'디지털 기술'**과 융합하여 **간편하고 신속한 행정 서비스를 제공**하는 방향은 군민과 소상공인의 실제 요구에 부응하는 최적의 전략이 될 것입니다.
+                </p>
+                <p class="mt-6 text-lg text-gray-600">
+                    본 데이터 분석 결과는 향후 담양군 규제혁신 아이디어의 **객관적 근거**로 활용될 수 있으며, 이를 바탕으로 한 구체적인 정책 제안이 필요합니다.
+                </p>
+                 <div class="mt-8 bg-gray-100 p-6 rounded-lg text-sm text-gray-600 text-left">
+                    <h4 class="font-bold text-gray-800 mb-2">데이터 한계점 및 고려사항</h4>
+                    <p>본 분석은 네이버 데이터랩의 검색량에 기반하였으며, 키워드 5글자 제한, 지역별 세분화 데이터 부족 등의 한계가 있을 수 있습니다. 정책과 검색량의 상관관계는 추가 검증이 필요합니다.</p>
+                </div>
+                <div class="mt-10">
+                    <a href="proposal.html" class="inline-block bg-damyang-green text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-opacity-90 transition-colors">
+                        이 분석 기반의 제안서 보기
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 bg-black text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+             <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">담</span>
+                </div>
+                <span class="text-white font-bold text-xl">담양 DNA 프로젝트</span>
+            </div>
+            <p>&copy; 2025 담양 DNA 프로젝트. 데이터 기반 규제혁신 제안.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Scroll reveal animation
+            const scrollElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(el => observer.observe(el));
+
+            // Chart.js Configuration
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: true }, tooltip: { enabled: true } },
+                scales: {
+                    x: { type: 'time', time: { unit: 'month', tooltipFormat: 'yyyy-MM' }, grid: { display: false } },
+                    y: { beginAtZero: true, max: 100 }
+                }
+            };
+
+            // --- Chart Data based on Report ---
+
+            // SME Trend Chart (소상공인)
+            const smeLabels = ['2023-01-01', '2023-07-01', '2024-01-15', '2024-07-01', '2025-04-01'];
+            const smeDataPoints = [100, 65, 85, 76, 60]; // Spike at 23.1, 24.1, 24.7
+            const smeCtx = document.getElementById('smeTrendChart')?.getContext('2d');
+            if (smeCtx) {
+                new Chart(smeCtx, {
+                    type: 'line',
+                    data: { labels: smeLabels, datasets: [{ label: '소상공인 검색량', data: smeDataPoints, borderColor: '#10B981', tension: 0.1 }] },
+                    options: commonChartOptions
+                });
+            }
+
+            // Tourism Trend Chart (담양)
+            const tourismLabels = ['2023-01-01', '2023-05-01', '2023-08-01', '2023-10-01', '2024-01-01', '2024-05-01', '2024-08-01', '2024-10-01'];
+            const tourismDataPoints = [50, 95, 60, 100, 48, 92, 58, 98]; // Peaks in May/Oct
+            const tourismCtx = document.getElementById('tourismTrendChart')?.getContext('2d');
+            if (tourismCtx) {
+                new Chart(tourismCtx, {
+                    type: 'line',
+                    data: { labels: tourismLabels, datasets: [{ label: '담양 관광 검색량', data: tourismDataPoints, borderColor: '#22C55E', tension: 0.1 }] },
+                    options: commonChartOptions
+                });
+            }
+
+            // Economic Chart (소상공인 + 전통시장)
+            const economicLabelsFull = ['2023-01-01', '2023-09-01', '2024-01-01', '2024-09-01', '2025-01-01'];
+            const economicDataSME = [100, 60, 85, 65, 70];
+            const economicDataMarket = [10, 15, 14, 15, 14]; // Spikes in Sep (Chuseok) / Jan (Seollal)
+            const economicCtx = document.getElementById('economicChart')?.getContext('2d');
+            if (economicCtx) {
+                new Chart(economicCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: economicLabelsFull,
+                        datasets: [
+                            { label: '소상공인', data: economicDataSME, backgroundColor: 'rgba(16, 185, 129, 0.6)' },
+                            { label: '전통시장', data: economicDataMarket, backgroundColor: 'rgba(245, 158, 11, 0.6)' }
+                        ]
+                    },
+                     options: { ...commonChartOptions, scales: {...commonChartOptions.scales, x: {...commonChartOptions.scales.x, time: {unit: 'quarter'}}} }
+                });
+            }
+
+            // Regional Chart (담양 + 대나무)
+            const regionalLabelsFull = ['2023-01-01', '2023-05-01', '2023-10-01', '2024-01-01', '2024-05-01', '2024-10-01'];
+            const regionalDataDamyang = [50, 95, 100, 48, 92, 98];
+            const regionalDataBamboo = [12, 23, 25, 10, 22, 24]; // 20-25% of Damyang
+             const regionalCtx = document.getElementById('regionalChart')?.getContext('2d');
+            if (regionalCtx) {
+                new Chart(regionalCtx, {
+                    type: 'line',
+                    data: {
+                        labels: regionalLabelsFull,
+                        datasets: [
+                            { label: '담양', data: regionalDataDamyang, borderColor: '#22C55E', tension: 0.4 },
+                            { label: '대나무', data: regionalDataBamboo, borderColor: '#4ade80', tension: 0.4, borderDash: [5, 5] }
+                        ]
+                    },
+                    options: commonChartOptions
+                });
+            }
+
+            // Daily Chart (인허가)
+            const dailyLabels = ['2023-03-01', '2023-09-01', '2024-03-01', '2024-09-01', '2025-03-01'];
+            const dailyData = [100, 85, 80, 70, 65]; // Downward trend
+            const dailyCtx = document.getElementById('dailyChart')?.getContext('2d');
+            if (dailyCtx) {
+                new Chart(dailyCtx, {
+                    type: 'line',
+                    data: { labels: dailyLabels, datasets: [{ label: '인허가 검색량', data: dailyData, borderColor: '#3B82F6', tension: 0.1 }] },
+                    options: { ...commonChartOptions, scales: {...commonChartOptions.scales, x: {...commonChartOptions.scales.x, time: {unit: 'quarter'}}} }
+                });
+            }
+
+            // Welfare Chart (출산지원 + 육아지원)
+            const welfareLabels = ['2023-01-01', '2023-03-01', '2024-01-01', '2024-03-01', '2025-01-01', '2025-03-01'];
+            const welfareDataBirth = [40, 30, 38, 28, 35, 25]; // Higher in Jan
+            const welfareDataCare = [10, 15, 11, 14, 12, 15]; // Higher in Mar
+            const welfareCtx = document.getElementById('welfareChart')?.getContext('2d');
+            if (welfareCtx) {
+                 new Chart(welfareCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: welfareLabels,
+                        datasets: [
+                            { label: '출산지원', data: welfareDataBirth, backgroundColor: 'rgba(236, 72, 153, 0.6)' },
+                            { label: '육아지원', data: welfareDataCare, backgroundColor: 'rgba(168, 85, 247, 0.6)' }
+                        ]
+                    },
+                    options: { ...commonChartOptions, scales: {...commonChartOptions.scales, x: {...commonChartOptions.scales.x, time: {unit: 'quarter'}}} }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

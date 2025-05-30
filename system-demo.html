@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 데모 - 담양 DNA 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'damyang-green': '#10B981',
+                        'rural-gold': '#F59E0B',
+                        'digital-blue': '#3B82F6',
+                        'bamboo': '#22C55E'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-noto { font-family: 'Noto Sans KR', sans-serif; }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .demo-step {
+            transition: all 0.3s ease;
+        }
+        
+        .demo-step.active {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #10B981;
+            white-space: nowrap;
+            animation: typing 2s steps(40, end), blink 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #10B981; }
+        }
+        
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        
+        .chat-bubble {
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="font-noto text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">담</span>
+                    </div>
+                    <a href="index.html" class="font-bold text-xl text-gray-900">담양 DNA 시스템</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-damyang-green transition-colors">홈</a>
+                    <a href="proposal.html" class="text-gray-700 hover:text-damyang-green transition-colors">제안서</a>
+                    <a href="system-demo.html" class="text-damyang-green font-semibold">시스템 데모</a>
+                    <a href="trend-analysis.html" class="text-gray-700 hover:text-damyang-green transition-colors">트렌드 분석</a>
+                    <a href="benchmarking.html" class="text-gray-700 hover:text-damyang-green transition-colors">벤치마킹</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-digital-blue to-cyan-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">시스템 데모</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                담양 DNA 원클릭 허가 시스템을 직접 체험해보세요
+            </p>
+        </div>
+    </section>
+
+    <!-- Demo Selection -->
+    <section class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🏗️ 사업자 유형 선택</h2>
+                <p class="text-xl text-gray-600">담양 특화 업종을 선택하여 맞춤형 인허가 과정을 체험하세요</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 죽제품 제조업 -->
+                <div class="demo-step bg-white border-2 border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:border-damyang-green transition-all" onclick="selectBusinessType('bamboo')">
+                    <div class="w-20 h-20 bg-damyang-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🎋</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">죽제품 제조업</h3>
+                    <p class="text-gray-600 mb-6">대나무를 활용한 전통 공예품 및 생활용품 제조</p>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <div>• 죽세공 체험장 운영</div>
+                            <div>• 대나무 생활용품 제조</div>
+                            <div>• 관광객 대상 판매</div>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full px-6 py-3 bg-damyang-green text-white font-semibold rounded-lg hover:bg-bamboo transition-colors">
+                        선택하기
+                    </button>
+                </div>
+
+                <!-- 농촌체험 관광업 -->
+                <div class="demo-step bg-white border-2 border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:border-bamboo transition-all" onclick="selectBusinessType('agritourism')">
+                    <div class="w-20 h-20 bg-bamboo rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🌾</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">농촌체험 관광업</h3>
+                    <p class="text-gray-600 mb-6">농촌생활 체험 및 농업활동 관광 프로그램 운영</p>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <div>• 농사 체험 프로그램</div>
+                            <div>• 농촌민박 운영</div>
+                            <div>• 계절별 축제 기획</div>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full px-6 py-3 bg-bamboo text-white font-semibold rounded-lg hover:bg-green-600 transition-colors">
+                        선택하기
+                    </button>
+                </div>
+
+                <!-- 농특산물 판매업 -->
+                <div class="demo-step bg-white border-2 border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:border-rural-gold transition-all" onclick="selectBusinessType('local-food')">
+                    <div class="w-20 h-20 bg-rural-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🌽</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">농특산물 판매업</h3>
+                    <p class="text-gray-600 mb-6">담양 지역 특산품 가공 및 판매</p>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <div>• 대나무순 가공식품</div>
+                            <div>• 지역 농산물 판매</div>
+                            <div>• 온라인 쇼핑몰 운영</div>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full px-6 py-3 bg-rural-gold text-white font-semibold rounded-lg hover:bg-yellow-500 transition-colors">
+                        선택하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Process -->
+    <section id="demo-process" class="py-16 bg-gray-100" style="display: none;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Progress Bar -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">신청 진행 상황</h2>
+                    <span id="progress-text" class="text-sm text-gray-600">1/4 단계</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div id="progress-bar" class="progress-bar bg-damyang-green h-3 rounded-full" style="width: 25%"></div>
+                </div>
+            </div>
+
+            <!-- Step Content -->
+            <div id="step-content" class="bg-white rounded-2xl p-8 shadow-lg">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant -->
+    <section id="ai-assistant" class="py-16 bg-white" style="display: none;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🤖 AI 맞춤 가이드</h2>
+                <p class="text-xl text-gray-600">궁금한 점을 AI 어시스턴트에게 물어보세요</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-6">
+                <!-- Chat Interface -->
+                <div id="chat-container" class="h-96 overflow-y-auto mb-4 space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-damyang-green rounded-full flex items-center justify-center">
+                            <span class="text-white text-sm">🤖</span>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 max-w-md">
+                            <p class="text-gray-800">안녕하세요! 담양 DNA 허가 시스템 AI 어시스턴트입니다. 인허가 과정에 대해 궁금한 점이 있으시면 언제든 물어보세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="flex space-x-3">
+                    <input type="text" id="chat-input" placeholder="예: 필요한 서류가 무엇인가요?" 
+                           class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-damyang-green focus:border-transparent">
+                    <button onclick="sendMessage()" class="px-6 py-3 bg-damyang-green text-white font-semibold rounded-lg hover:bg-bamboo transition-colors">
+                        전송
+                    </button>
+                </div>
+
+                <!-- Quick Questions -->
+                <div class="mt-6">
+                    <p class="text-sm text-gray-600 mb-3">자주 묻는 질문:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="askQuestion('필요한 서류가 무엇인가요?')" class="px-3 py-2 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50 transition-colors">
+                            필요한 서류가 무엇인가요?
+                        </button>
+                        <button onclick="askQuestion('처리 기간은 얼마나 걸리나요?')" class="px-3 py-2 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50 transition-colors">
+                            처리 기간은 얼마나 걸리나요?
+                        </button>
+                        <button onclick="askQuestion('수수료는 얼마인가요?')" class="px-3 py-2 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50 transition-colors">
+                            수수료는 얼마인가요?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Results Section -->
+    <section id="results" class="py-16 bg-gray-100" style="display: none;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🎉 신청 완료!</h2>
+                <p class="text-xl text-gray-600">담양 DNA 시스템으로 빠르고 간편하게 처리되었습니다</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Before vs After -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">⚡ 처리 시간 비교</h3>
+                    <div class="space-y-6">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                            <h4 class="font-semibold text-red-800 mb-3">기존 방식</h4>
+                            <div class="space-y-2 text-sm text-red-600">
+                                <div class="flex justify-between">
+                                    <span>관광과 방문</span>
+                                    <span>3일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>경제과 방문</span>
+                                    <span>5일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>건축과 방문</span>
+                                    <span>7일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>보건소 방문</span>
+                                    <span>4일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>서류 보완</span>
+                                    <span>3일</span>
+                                </div>
+                                <div class="border-t border-red-300 pt-2 flex justify-between font-bold">
+                                    <span>총 소요 시간</span>
+                                    <span>22일</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                            <h4 class="font-semibold text-green-800 mb-3">담양 DNA 시스템</h4>
+                            <div class="space-y-2 text-sm text-green-600">
+                                <div class="flex justify-between">
+                                    <span>온라인 신청</span>
+                                    <span>1일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>통합 심사</span>
+                                    <span>3일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>현장 확인</span>
+                                    <span>2일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>최종 승인</span>
+                                    <span>1일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="border-t border-green-300 pt-2 flex justify-between font-bold">
+                                    <span>총 소요 시간</span>
+                                    <span>7일</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center p-4 bg-damyang-green text-white rounded-lg">
+                            <div class="text-2xl font-bold">68% 단축</div>
+                            <div class="text-sm">22일 → 7일</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Timeline -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📱 실시간 알림</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-damyang-green rounded-full mt-2"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">신청 접수 완료</div>
+                                <div class="text-sm text-gray-600">2025.05.30 14:30</div>
+                                <div class="text-sm text-gray-500">온라인 신청이 정상적으로 접수되었습니다.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-damyang-green rounded-full mt-2"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">서류 검토 시작</div>
+                                <div class="text-sm text-gray-600">2025.05.31 09:00</div>
+                                <div class="text-sm text-gray-500">담당자가 서류 검토를 시작했습니다.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-damyang-green rounded-full mt-2"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">통합 심사 진행</div>
+                                <div class="text-sm text-gray-600">2025.06.02 10:30</div>
+                                <div class="text-sm text-gray-500">관련 부서 통합 심사가 진행 중입니다.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-damyang-green rounded-full mt-2"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">현장 확인 예정</div>
+                                <div class="text-sm text-gray-600">2025.06.04 14:00</div>
+                                <div class="text-sm text-gray-500">담당자가 현장 확인을 위해 방문 예정입니다.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mt-2 animate-pulse"></div>
+                            <div>
+                                <div class="font-semibold text-green-700">최종 승인 완료</div>
+                                <div class="text-sm text-gray-600">2025.06.06 16:00</div>
+                                <div class="text-sm text-green-600">축하합니다! 사업자 등록이 완료되었습니다.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-2">멘토링 매칭 안내</h4>
+                        <p class="text-sm text-green-700">지역 선배 소상공인과의 1:1 멘토링이 자동 매칭되었습니다. 김대나무 대표(죽제품공방 운영 15년)와 연결됩니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="startOver()" class="px-8 py-4 bg-digital-blue text-white font-bold rounded-xl hover:bg-blue-600 transition-colors">
+                    다른 업종으로 다시 체험하기
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">💎 시스템 핵심 기능</h2>
+                <p class="text-xl text-gray-600">담양 DNA 시스템만의 특별한 기능들</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center scroll-reveal">
+                    <div class="w-16 h-16 bg-damyang-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI 맞춤 가이드</h3>
+                    <p class="text-gray-600 text-sm">업종별 특화된 AI가 필요한 서류와 절차를 자동으로 안내</p>
+                </div>
+
+                <div class="text-center scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-bamboo rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">패스트트랙</h3>
+                    <p class="text-gray-600 text-sm">관광시즌과 지역특화 업종에 대한 우선 처리 시스템</p>
+                </div>
+
+                <div class="text-center scroll-reveal" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-digital-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">모바일 우선</h3>
+                    <p class="text-gray-600 text-sm">언제 어디서나 스마트폰으로 신청하고 진행상황 확인</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-damyang-green">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-reveal">
+                <h2 class="text-3xl font-bold text-white mb-6">더 자세한 정보가 필요하신가요?</h2>
+                <p class="text-xl text-white/90 mb-8">제안서와 트렌드 분석을 확인해보세요</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="proposal.html" class="px-8 py-4 bg-white text-damyang-green font-bold rounded-xl hover:bg-gray-100 transition-colors">
+                        📋 제안서 상세 보기
+                    </a>
+                    <a href="trend-analysis.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-damyang-green transition-colors">
+                        📊 트렌드 분석
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-8 h-8 bg-damyang-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">담</span>
+                    </div>
+                    <span class="text-white font-bold text-xl">담양 DNA 소상공인 원클릭 허가 시스템</span>
+                </div>
+                <p class="text-gray-400 mb-4">2025 담양군 규제혁신 아이디어 공모전 출품작</p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <span>제안자: 박용환</span>
+                    <span>소속: 크리에이티브 넥서스</span>
+                    <span>연락처: 010-7939-3123</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>
